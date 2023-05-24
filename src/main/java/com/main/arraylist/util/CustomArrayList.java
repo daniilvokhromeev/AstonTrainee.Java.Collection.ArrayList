@@ -1,9 +1,8 @@
-package util;
+package com.main.arraylist.util;
 
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
-
 /**
  * Реализация обобщенного списка на основе массива. Элементы списка должны реализовывать интерфейс Comparable.
  * Этот класс предоставляет методы для операций с элементами, такими как добавление, получение, удаление и т.д.
@@ -75,6 +74,26 @@ public class CustomArrayList<T extends Comparable<T>> implements CustomList<T> {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size " + size);
         }
         return (T) elements[index];
+    }
+
+    /**
+     * Вставляет указанный элемент на указанную позицию в этом списке.
+     *
+     * @param index   индекс, по которому нужно вставить указанный элемент
+     * @param element элемент, который нужно вставить
+     * @throws IndexOutOfBoundsException если индекс находится вне диапазона (index < 0 || index > size())
+     */
+    @Override
+    public void insert(int index, T element) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size " + size);
+        }
+        if (size == elements.length) {
+            ensureCapacity();
+        }
+        System.arraycopy(elements, index, elements, index + 1, size - index);
+        elements[index] = element;
+        size++;
     }
 
     /**

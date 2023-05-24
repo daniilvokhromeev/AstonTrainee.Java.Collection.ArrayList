@@ -1,4 +1,4 @@
-package util;
+package com.main.arraylist.util;
 
 import java.util.Comparator;
 /**
@@ -18,6 +18,14 @@ public interface CustomList<T> {
      * @return элемент по указанному индексу
      */
     T get(int index);
+    /**
+     * Вставляет указанный элемент на указанную позицию в этом списке.
+     *
+     * @param index   индекс, по которому нужно вставить указанный элемент
+     * @param element элемент, который нужно вставить
+     * @throws IndexOutOfBoundsException если индекс находится вне диапазона (index < 0 || index > size())
+     */
+    void insert(int index, T element);
     /**
      * Удаляет элемент из списка по заданному индексу и возвращает удаленный элемент.
      * @param index индекс элемента, который нужно удалить

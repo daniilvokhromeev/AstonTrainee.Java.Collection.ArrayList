@@ -1,6 +1,8 @@
-import util.CustomArrayList;
-import util.CustomList;
-import util.SortMethod;
+package com.main.arraylist;
+
+import com.main.arraylist.util.CustomArrayList;
+import com.main.arraylist.util.CustomList;
+import com.main.arraylist.util.SortMethod;
 import java.util.Arrays;
 
 public class Main {
